@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f3eb">
+  <meta name="description" content="A quiet place for your notes, online or off.">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <link rel="stylesheet" href="styles.css">
+  <title>Little Notes</title>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <div class="shell">
+    <header class="topbar">
+      <a class="brand" href="./" aria-label="Little Notes home"><span class="brand-mark" aria-hidden="true">✳</span> little notes<span class="brand-dot">.</span></a>
+      <div class="top-actions"><span id="connection" class="connection" role="status">Checking connection</span><button id="install" class="button subtle" type="button" hidden>Install app</button></div>
+    </header>
+    <main>
+      <section class="intro" aria-labelledby="page-title">
+        <div><p class="eyebrow">YOUR SPACE TO THINK</p><h1 id="page-title">Make room for<br><em>your thoughts.</em></h1><p class="intro-copy">A little place for the things worth remembering. Just for you, right here on this device.</p></div>
+        <div class="intro-art" aria-hidden="true"><span>✺</span><p>Good ideas<br>start small.</p></div>
+      </section>
+      <div id="notice" class="notice" role="status" hidden></div>
+      <div class="workspace">
+        <section class="composer card" aria-labelledby="editor-title">
+          <div class="section-heading"><div><p class="eyebrow">CAPTURE A THOUGHT</p><h2 id="editor-title">New note</h2></div><span class="heading-icon" aria-hidden="true">✳</span></div>
+          <form id="note-form">
+            <label for="title">Title <span class="optional">(optional)</span></label><input id="title" maxlength="120" placeholder="Give it a title" autocomplete="off">
+            <label for="body">Your note</label><textarea id="body" rows="7" maxlength="20000" placeholder="What's on your mind?" required></textarea>
+            <div class="form-actions"><button class="button primary" id="save" type="submit">Save note <span aria-hidden="true">↗</span></button><button class="button subtle" id="cancel" type="button" hidden>Cancel edit</button></div>
+          </form>
+          <p class="privacy"><span aria-hidden="true">✦</span> Your notes stay on this device.</p>
+        </section>
+        <section class="notes-section" aria-labelledby="notes-title">
+          <div class="notes-header"><div><p class="eyebrow">THE LITTLE THINGS</p><h2 id="notes-title">Your notes <span id="count" class="count">0</span></h2></div><label class="search"><span class="sr-only">Search notes</span><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="Search notes" autocomplete="off"></label></div>
+          <div id="notes" class="notes-grid"></div>
+          <div id="empty" class="empty card" hidden><div class="empty-icon" aria-hidden="true">✎</div><h3 id="empty-title"></h3><p id="empty-copy"></p></div>
+        </section>
+      </div>
+    </main>
+    <footer>MADE FOR THE MOMENTS IN BETWEEN <span aria-hidden="true">✳</span></footer>
+  </div>
+</body>
+</html>
